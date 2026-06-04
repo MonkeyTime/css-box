@@ -45,17 +45,37 @@
     --kiss-container-lg: 90rem;
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      color-scheme: dark;
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
       --kiss-bg: #121416;
       --kiss-fg: #edf1f5;
       --kiss-muted: #a9b3bd;
       --kiss-surface: #1c2024;
       --kiss-border: #303842;
-      --kiss-focus: #5cc8ff;
-    }
+    --kiss-focus: #5cc8ff;
   }
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --kiss-bg: #fff;
+  --kiss-fg: #2f3437;
+  --kiss-muted: #667085;
+  --kiss-surface: #f7f8fa;
+  --kiss-border: #d9dee7;
+  --kiss-focus: #168ac7;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --kiss-bg: #121416;
+  --kiss-fg: #edf1f5;
+  --kiss-muted: #a9b3bd;
+  --kiss-surface: #1c2024;
+  --kiss-border: #303842;
+  --kiss-focus: #5cc8ff;
+}
 
 
 *,
@@ -523,6 +543,10 @@ canvas {
     min-block-size: auto;
     padding: 0.35em 0.55em;
     text-transform: none;
+  }
+
+  .theme-toggle {
+    min-inline-size: 8.5rem;
   }
 
   .btn-muted {

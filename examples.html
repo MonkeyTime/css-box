@@ -4,6 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CSS Box - Examples</title>
+    <script>
+      (function () {
+        var savedTheme = null;
+        try {
+          savedTheme = localStorage.getItem("css-box-theme");
+        } catch (error) {
+          savedTheme = null;
+        }
+        if (savedTheme === "light" || savedTheme === "dark") {
+          document.documentElement.setAttribute("data-theme", savedTheme);
+        }
+      }());
+    </script>
     <link rel="stylesheet" href="css-box.css">
   </head>
   <body>
@@ -27,10 +40,16 @@
             <h1 class="m0">CSS Box Examples</h1>
             <p class="muted">A reference page for quickly testing the toolbox.</p>
           </div>
-          <a class="btn full-phone" href="css-box.css">
-            <i class="fa-solid fa-file-code" aria-hidden="true"></i>
-            css-box.css
-          </a>
+          <div class="cluster stack-phone">
+            <button class="btn btn-outline theme-toggle full-phone" type="button" data-theme-toggle aria-pressed="false">
+              <i class="fa-solid fa-moon" aria-hidden="true"></i>
+              <span>Dark mode</span>
+            </button>
+            <a class="btn full-phone" href="css-box.css">
+              <i class="fa-solid fa-file-code" aria-hidden="true"></i>
+              css-box.css
+            </a>
+          </div>
         </section>
       </header>
 
@@ -467,5 +486,51 @@
         </div>
       </section>
     </main>
+    <script>
+      (function () {
+        var toggle = document.querySelector("[data-theme-toggle]");
+        if (!toggle) return;
+
+        var icon = toggle.querySelector("i");
+        var label = toggle.querySelector("span");
+        var media = window.matchMedia("(prefers-color-scheme: dark)");
+
+        function currentTheme() {
+          return document.documentElement.getAttribute("data-theme") || (media.matches ? "dark" : "light");
+        }
+
+        function render(theme) {
+          var isDark = theme === "dark";
+          toggle.setAttribute("aria-pressed", String(isDark));
+          icon.className = isDark ? "fa-solid fa-sun" : "fa-solid fa-moon";
+          label.textContent = isDark ? "Light mode" : "Dark mode";
+        }
+
+        toggle.addEventListener("click", function () {
+          var nextTheme = currentTheme() === "dark" ? "light" : "dark";
+          document.documentElement.setAttribute("data-theme", nextTheme);
+          try {
+            localStorage.setItem("css-box-theme", nextTheme);
+          } catch (error) {
+            // Theme still changes for the current page view.
+          }
+          render(nextTheme);
+        });
+
+        function handleSystemThemeChange() {
+          if (!document.documentElement.hasAttribute("data-theme")) {
+            render(currentTheme());
+          }
+        }
+
+        if (media.addEventListener) {
+          media.addEventListener("change", handleSystemThemeChange);
+        } else if (media.addListener) {
+          media.addListener(handleSystemThemeChange);
+        }
+
+        render(currentTheme());
+      }());
+    </script>
   </body>
 </html>
