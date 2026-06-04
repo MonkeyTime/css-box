@@ -4,6 +4,11 @@
   "description": "Modern KISS CSS toolbox with normalize.css and Font Awesome Free.",
   "license": "MIT",
   "private": true,
+  "browserslist": [
+    ">= 0.5%",
+    "last 2 versions",
+    "not dead"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-free": "7.2.0",
     "normalize.css": "8.0.1"
