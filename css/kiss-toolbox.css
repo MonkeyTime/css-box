@@ -1256,6 +1256,11 @@ canvas {
     .stack-phone > * {
       min-inline-size: 0;
     }
+    .inline-phone > * {
+      justify-self: start;
+      width: fit-content;
+      inline-size: fit-content;
+    }
     .nav {
       inline-size: 100%;
     }
