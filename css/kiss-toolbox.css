@@ -166,11 +166,12 @@ canvas {
   margin-inline: auto;
 }
 
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--kiss-gap, 0);
-  }
+.row {
+  --kiss-gap: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--kiss-gap, 0);
+}
 
   .box,
   .boxed,
