@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS Box - Examples</title>
+    <link rel="stylesheet" href="css-box.css">
+  </head>
+  <body>
+    <main class="container-lg stack gap5 p2">
+      <header class="stack gap2 brdb pb2">
+        <nav class="section-head">
+          <a class="txtn txtbold" href="index.html">
+            <i class="fa-solid fa-cube blu" aria-hidden="true"></i>
+            CSS Box
+          </a>
+          <ul class="nav nav-fill">
+            <li><a href="#grid" aria-current="page">Grid</a></li>
+            <li><a href="#forms">Forms</a></li>
+            <li><a href="#components">Components</a></li>
+            <li><a href="#patterns">Patterns</a></li>
+            <li><a href="#utilities">Utilities</a></li>
+          </ul>
+        </nav>
+        <section class="section-head">
+          <div>
+            <h1 class="m0">CSS Box Examples</h1>
+            <p class="muted">A reference page for quickly testing the toolbox.</p>
+          </div>
+          <a class="btn full-phone" href="css-box.css">
+            <i class="fa-solid fa-file-code" aria-hidden="true"></i>
+            css-box.css
+          </a>
+        </section>
+      </header>
+
+      <section id="grid" class="stack">
+        <div class="section-head">
+          <h2 class="m0">Grid and Layout</h2>
+          <span class="badge badge-muted">.grid .row .stack .cluster</span>
+        </div>
+
+        <div class="grid grid-4 gap3">
+          <article class="card">
+            <div class="card-body">
+              <span class="badge">1 col</span>
+              <h3 class="mt2 mb1">Compact Card</h3>
+              <p class="muted">A standard card with border, radius, and a subtle shadow.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-body">
+              <span class="badge badge-gre">Auto</span>
+              <h3 class="mt2 mb1">Responsive Grid</h3>
+              <p class="muted">Columns collapse cleanly on smaller screens.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-body">
+              <span class="badge badge-ora">Flex</span>
+              <h3 class="mt2 mb1">Cluster</h3>
+              <p class="muted">Useful for actions, filters, menus, and tags.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-body">
+              <span class="badge badge-red">Stack</span>
+              <h3 class="mt2 mb1">Spacing</h3>
+              <p class="muted">Gaps use the toolbox fluid spacing tokens.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="row">
+          <div class="box u50 card">
+            <div class="card-body">
+              <strong>.u50</strong>
+              <p class="muted">Legacy width utility preserved.</p>
+            </div>
+          </div>
+          <div class="box u25 card">
+            <div class="card-body">
+              <strong>.u25</strong>
+              <p class="muted">Quarter-width column.</p>
+            </div>
+          </div>
+          <div class="box u25 card">
+            <div class="card-body">
+              <strong>.u25</strong>
+              <p class="muted">Quarter-width column.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="forms" class="stack">
+        <div class="section-head">
+          <h2 class="m0">Forms</h2>
+          <span class="badge badge-muted">inputs, selects, checks, input groups</span>
+        </div>
+
+        <form class="card form" action="#" method="get">
+          <div class="card-head section-head">
+            <strong>User Profile</strong>
+            <span class="badge badge-gre">Active</span>
+          </div>
+          <div class="card-body form">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="firstname">First Name</label>
+                <input id="firstname" name="firstname" type="text" placeholder="Camille">
+              </div>
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="camille@example.com">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="role">Role</label>
+                <select id="role" name="role">
+                  <option>Administrator</option>
+                  <option>Editor</option>
+                  <option>Reader</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="budget">Budget</label>
+                <div class="input-group">
+                  <span class="input-addon">USD</span>
+                  <input id="budget" name="budget" type="number" value="1200">
+                  <span class="input-addon">/ month</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Internal notes"></textarea>
+              <span class="form-help">Discreet helper text, like the patterns found in common CSS frameworks.</span>
+            </div>
+
+            <div class="cluster stack-phone">
+              <label class="check"><input type="checkbox" checked> Receive notifications</label>
+              <label class="radio"><input type="radio" name="plan" checked> Standard</label>
+              <label class="radio"><input type="radio" name="plan"> Premium</label>
+            </div>
+          </div>
+          <div class="card-foot form-actions">
+            <button class="btn btn-muted" type="reset">Cancel</button>
+            <button class="btn" type="submit">
+              <i class="fa-solid fa-floppy-disk" aria-hidden="true"></i>
+              Save
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section id="components" class="stack">
+        <div class="section-head">
+          <h2 class="m0">Components</h2>
+          <span class="badge badge-muted">buttons, alerts, tables, pagination</span>
+        </div>
+
+        <div class="grid grid-2 gap3">
+          <section class="stack">
+            <div class="btn-row">
+              <button class="btn" type="button">Primary</button>
+              <button class="btn btn-outline" type="button">Outline</button>
+              <button class="btn btn-gre" type="button">Success</button>
+              <button class="btn btn-red" type="button">Danger</button>
+              <button class="btn btn-mini" type="button">Mini</button>
+            </div>
+
+            <div class="alert info">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+              Neutral information to guide the user.
+            </div>
+            <div class="alert success">
+              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+              The operation completed successfully.
+            </div>
+            <div class="alert warning">
+              <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+              Check this before continuing.
+            </div>
+            <div class="alert error">
+              <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
+              An error needs to be fixed.
+            </div>
+          </section>
+
+          <section class="stack">
+            <div class="callout">
+              <strong>Callout</strong>
+              <p class="m0 mt1">A highlighted block for contextual help, product notes, or important messages.</p>
+            </div>
+
+            <div>
+              <p class="mb1 txtbold">Progress</p>
+              <div class="progress" aria-label="72 percent progress">
+                <span class="progress-bar" style="--kiss-progress: 72%"></span>
+              </div>
+            </div>
+
+            <div class="cluster stack-phone">
+              <span class="badge">New</span>
+              <span class="badge badge-gre">Valid</span>
+              <span class="badge badge-ora">Pending</span>
+              <span class="badge badge-red">Blocked</span>
+              <span class="badge badge-muted">Archived</span>
+            </div>
+
+            <ul class="pagination" aria-label="Pagination">
+              <li><a href="#" aria-label="Previous page"><i class="fa-solid fa-angle-left" aria-hidden="true"></i></a></li>
+              <li><a href="#">1</a></li>
+              <li><span aria-current="page">2</span></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#" aria-label="Next page"><i class="fa-solid fa-angle-right" aria-hidden="true"></i></a></li>
+            </ul>
+          </section>
+        </div>
+
+        <div class="table-wrap table-stack">
+          <table class="table table-striped">
+            <caption>Responsive table with statuses</caption>
+            <thead>
+              <tr>
+                <th>Project</th>
+                <th>Owner</th>
+                <th>Status</th>
+                <th class="txtr">Budget</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Project">UI refresh</td>
+                <td data-label="Owner">Nadia</td>
+                <td data-label="Status"><span class="badge badge-gre">Shipped</span></td>
+                <td class="txtr" data-label="Budget">$8,400</td>
+              </tr>
+              <tr>
+                <td data-label="Project">Design system</td>
+                <td data-label="Owner">Alex</td>
+                <td data-label="Status"><span class="badge">In progress</span></td>
+                <td class="txtr" data-label="Budget">$12,000</td>
+              </tr>
+              <tr>
+                <td data-label="Project">Accessibility audit</td>
+                <td data-label="Owner">Sam</td>
+                <td data-label="Status"><span class="badge badge-ora">Review</span></td>
+                <td class="txtr" data-label="Budget">$3,200</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="patterns" class="stack">
+        <div class="section-head">
+          <h2 class="m0">Advanced Patterns</h2>
+          <span class="badge badge-muted">dashboard, pricing, tabs, timeline, modal</span>
+        </div>
+
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li>CSS Toolbox</li>
+          </ol>
+        </nav>
+
+        <div class="tabs" role="tablist" aria-label="Views">
+          <a href="#" aria-current="page">Overview</a>
+          <a href="#">Activity</a>
+          <a href="#">Billing</a>
+          <a href="#">Settings</a>
+        </div>
+
+        <div class="grid grid-4 gap3">
+          <article class="stat">
+            <span class="stat-label">Visits</span>
+            <strong class="stat-value">24k</strong>
+            <span class="gre small"><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i> +18%</span>
+          </article>
+          <article class="stat">
+            <span class="stat-label">Conversion</span>
+            <strong class="stat-value">7.2%</strong>
+            <span class="ora small"><i class="fa-solid fa-minus" aria-hidden="true"></i> stable</span>
+          </article>
+          <article class="stat">
+            <span class="stat-label">Tickets</span>
+            <strong class="stat-value">38</strong>
+            <span class="red small"><i class="fa-solid fa-arrow-trend-down" aria-hidden="true"></i> +5 open</span>
+          </article>
+          <article class="stat">
+            <span class="stat-label">Satisfaction</span>
+            <strong class="stat-value">96</strong>
+            <span class="blu small"><i class="fa-solid fa-star" aria-hidden="true"></i> score</span>
+          </article>
+        </div>
+
+        <div class="sidebar-layout">
+          <aside class="card">
+            <div class="card-head">
+              <strong>Side Menu</strong>
+            </div>
+            <div class="card-body">
+              <ul class="nav stack-phone">
+                <li><a href="#" aria-current="page"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fa-solid fa-users" aria-hidden="true"></i> Customers</a></li>
+                <li><a href="#"><i class="fa-solid fa-gear" aria-hidden="true"></i> Settings</a></li>
+              </ul>
+            </div>
+          </aside>
+
+          <section class="grid grid-2 gap3">
+            <article class="card">
+              <div class="card-body media">
+                <span class="avatar">NB</span>
+                <div class="media-body">
+                  <h3 class="m0">Media Object</h3>
+                  <p class="muted m0 mt1">An avatar, content, and a layout that stacks on mobile.</p>
+                  <div class="cluster mt2">
+                    <span class="chip"><i class="fa-solid fa-tag" aria-hidden="true"></i> UI</span>
+                    <span class="chip"><i class="fa-solid fa-clock" aria-hidden="true"></i> 12 min</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-body stack">
+                <h3 class="m0">Compact List</h3>
+                <ul class="list">
+                  <li class="section-head"><span>CSS audit</span><span class="badge badge-gre">OK</span></li>
+                  <li class="section-head"><span>Responsive</span><span class="badge">In progress</span></li>
+                  <li class="section-head"><span>Documentation</span><span class="badge badge-ora">Todo</span></li>
+                </ul>
+              </div>
+            </article>
+          </section>
+        </div>
+
+        <div class="grid grid-3 gap3">
+          <article class="pricing">
+            <div>
+              <span class="badge badge-muted">Starter</span>
+              <h3>Simple</h3>
+              <p class="muted">For a small interface or prototype.</p>
+            </div>
+            <div class="price">0<small>USD</small></div>
+            <ul class="stack gap1 m0 p0">
+              <li>Essential CSS helpers</li>
+              <li>Simple forms</li>
+              <li>Responsive grid</li>
+            </ul>
+            <a class="btn btn-outline full-phone" href="#">Choose</a>
+          </article>
+
+          <article class="pricing pricing-featured">
+            <div>
+              <span class="badge">Popular</span>
+              <h3>Pro</h3>
+              <p class="muted">For a complete app with reusable components.</p>
+            </div>
+            <div class="price">19<small>USD/mo</small></div>
+            <ul class="stack gap1 m0 p0">
+              <li>Cards, tables, alerts</li>
+              <li>Dashboard patterns</li>
+              <li>CSS-variable theming</li>
+            </ul>
+            <a class="btn full-phone" href="#">Start</a>
+          </article>
+
+          <article class="pricing">
+            <div>
+              <span class="badge badge-muted">Team</span>
+              <h3>Team</h3>
+              <p class="muted">For a shared UI system across several pages.</p>
+            </div>
+            <div class="price">49<small>USD/mo</small></div>
+            <ul class="stack gap1 m0 p0">
+              <li>Complex layouts</li>
+              <li>Internal guidelines</li>
+              <li>Product components</li>
+            </ul>
+            <a class="btn btn-outline full-phone" href="#">Contact</a>
+          </article>
+        </div>
+
+        <div class="grid grid-2 gap3">
+          <section class="card">
+            <div class="card-body">
+              <h3 class="m0 mb2">Timeline</h3>
+              <ol class="timeline">
+                <li class="timeline-item">
+                  <strong>Brief</strong>
+                  <p class="muted m0">The need is defined and constraints are listed.</p>
+                </li>
+                <li class="timeline-item">
+                  <strong>Prototype</strong>
+                  <p class="muted m0">Components are assembled on a test page.</p>
+                </li>
+                <li class="timeline-item">
+                  <strong>Delivery</strong>
+                  <p class="muted m0">Helpers are documented and verified.</p>
+                </li>
+              </ol>
+            </div>
+          </section>
+
+          <section class="stack">
+            <div class="modal-demo">
+              <div class="modal-head section-head">
+                <strong>Static Modal</strong>
+                <span class="badge badge-muted">CSS only</span>
+              </div>
+              <div class="modal-body">
+                <p class="m0">Without JavaScript, the toolbox can provide the visual surface. Open and close behavior would come from the app.</p>
+              </div>
+              <div class="modal-foot form-actions">
+                <button class="btn btn-muted" type="button">Close</button>
+                <button class="btn" type="button">Confirm</button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-body stack gap2">
+                <span class="skeleton" style="inline-size: 42%"></span>
+                <span class="skeleton"></span>
+                <span class="skeleton" style="inline-size: 76%"></span>
+                <span class="skeleton" style="inline-size: 58%"></span>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section id="utilities" class="stack">
+        <div class="section-head">
+          <h2 class="m0">Utilities</h2>
+          <span class="badge badge-muted">colors, borders, text, spacing</span>
+        </div>
+
+        <div class="grid grid-4 gap2">
+          <div class="p3 radius bg-red whi txtc">.bg-red</div>
+          <div class="p3 radius bg-ora whi txtc">.bg-ora</div>
+          <div class="p3 radius bg-gre bla txtc">.bg-gre</div>
+          <div class="p3 radius bg-blu whi txtc">.bg-blu</div>
+        </div>
+
+        <div class="grid grid-3 gap3">
+          <div class="brd brd-blu radius p3">
+            <strong class="blu">Borders</strong>
+            <p class="muted m0 mt1">Classes `.brd`, `.brdt`, `.brdb`, `.brd-blu`.</p>
+          </div>
+          <div class="shadow radius p3">
+            <strong>Shadows</strong>
+            <p class="muted m0 mt1">`.shadow` and `.shadow-sm` for UI surfaces.</p>
+          </div>
+          <div class="radius-lg bg-surface p3">
+            <strong>Radii</strong>
+            <p class="muted m0 mt1">`.radius`, `.radius-sm`, `.radius-lg`.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

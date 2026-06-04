@@ -1,0 +1,11 @@
+{
+  "name": "css-box",
+  "version": "2.0.0",
+  "description": "Modern KISS CSS toolbox with normalize.css and Font Awesome Free.",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "7.2.0",
+    "normalize.css": "8.0.1"
+  }
+}
